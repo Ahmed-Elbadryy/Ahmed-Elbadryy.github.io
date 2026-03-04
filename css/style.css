@@ -1,0 +1,196 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+overflow:hidden;
+}
+
+/* PAGES */
+
+.page{
+position:absolute;
+height:100vh;
+width:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:60px;
+transition:transform 0.9s ease;
+}
+
+.page:not(.active){
+transform:translateY(100%);
+}
+
+/* HERO */
+
+.hero{
+background-image:url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b");
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+background:rgba(2,6,23,0.7);
+padding:40px;
+border-radius:10px;
+}
+
+/* ABOUT SPLIT */
+
+.about{
+background:#020617;
+}
+
+.split{
+display:flex;
+align-items:center;
+gap:60px;
+max-width:1100px;
+}
+
+.split img{
+width:350px;
+border-radius:10px;
+}
+
+.text{
+max-width:500px;
+text-align:left;
+}
+
+/* SKILLS */
+
+.skills-section{
+background:#0f172a;
+}
+
+.skills{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:40px;
+width:70%;
+}
+
+.skill{
+background:#020617;
+padding:20px;
+border-radius:10px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.skill:hover{
+transform:translateY(-6px);
+background:#1e293b;
+}
+
+/* PROJECTS */
+
+.projects-section{
+background:#020617;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+width:80%;
+margin-top:40px;
+}
+
+.project{
+background:#0f172a;
+border-radius:10px;
+overflow:hidden;
+transition:0.3s;
+}
+
+.project img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.project h3{
+margin-top:10px;
+}
+
+.project p{
+padding:10px;
+}
+
+.project a{
+color:#38bdf8;
+text-decoration:none;
+font-weight:bold;
+}
+
+.project:hover{
+transform:translateY(-8px);
+}
+
+/* CONTACT */
+
+.contact{
+background:#0f172a;
+}
+
+.contact a{
+color:#38bdf8;
+}
+
+/* ARROW */
+
+.arrow{
+position:absolute;
+bottom:40px;
+font-size:40px;
+color:#38bdf8;
+cursor:pointer;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(12px);
+}
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.split{
+flex-direction:column;
+text-align:center;
+}
+
+.split img{
+width:80%;
+}
+
+.skills{
+width:90%;
+}
+
+.projects{
+width:95%;
+}
+
+}

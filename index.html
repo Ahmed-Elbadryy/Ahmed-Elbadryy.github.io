@@ -1,27 +1,194 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Ahmed Elbadry Portfolio</title>
+
+<title>Ahmed Elbadry | Data Engineer</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
+<!-- HERO -->
+
+<section class="page hero active">
+
+<div class="hero-content">
+
 <h1>Ahmed Elbadry</h1>
+
 <h2>Data Engineer</h2>
 
 <p>
-Welcome to my portfolio website.
-I build data pipelines and transform raw data into useful insights.
+Building scalable data pipelines and analytics-ready systems.
 </p>
 
-<h3>Skills</h3>
+</div>
 
-<ul>
-<li>Python</li>
-<li>SQL</li>
-<li>Pandas</li>
-<li>Data Engineering</li>
-</ul>
+<div class="arrow" onclick="nextPage()">↓</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="page about">
+
+<div class="split">
+
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71">
+
+<div class="text">
+
+<h2>About Me</h2>
+
+<p>
+
+I am a data engineer focused on designing scalable data pipelines,
+cleaning and transforming complex datasets, and building systems
+that power analytics and machine learning.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="arrow" onclick="nextPage()">↓</div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section class="page skills-section">
+
+<h2>Skills</h2>
+
+<div class="skills">
+
+<div class="skill">🐍 Python</div>
+
+<div class="skill">🗄 SQL</div>
+
+<div class="skill">📊 Pandas</div>
+
+<div class="skill">⚙ ETL Pipelines</div>
+
+<div class="skill">☁ Data Warehousing</div>
+
+<div class="skill">📈 Data Visualization</div>
+
+</div>
+
+<div class="arrow" onclick="nextPage()">↓</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="page projects-section">
+
+<h2>Projects</h2>
+
+<div class="projects">
+
+<div class="project">
+
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c">
+
+<h3>Titanic Data Analysis</h3>
+
+<p>
+Exploratory data analysis using Python and Pandas.
+</p>
+
+<a href="https://github.com/Ahmed-Elbadryy">View Project</a>
+
+</div>
+
+
+<div class="project">
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+
+<h3>ETL Data Pipeline</h3>
+
+<p>
+Automated pipeline for cleaning and processing datasets.
+</p>
+
+<a href="https://github.com/Ahmed-Elbadryy">View Project</a>
+
+</div>
+
+
+<div class="project">
+
+<img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd">
+
+<h3>SQL Analytics Dashboard</h3>
+
+<p>
+Advanced SQL queries for analytical insights.
+</p>
+
+<a href="https://github.com/Ahmed-Elbadryy">View Project</a>
+
+</div>
+
+</div>
+
+<div class="arrow" onclick="nextPage()">↓</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="page contact">
+
+<h2>Contact</h2>
+
+<p>Email: your-email@example.com</p>
+
+<p>
+GitHub:
+<a href="https://github.com/Ahmed-Elbadryy">
+github.com/Ahmed-Elbadryy
+</a>
+</p>
+
+</section>
+
+
+<script>
+
+let currentPage = 0;
+
+const pages = document.querySelectorAll(".page");
+
+function nextPage(){
+
+if(currentPage < pages.length - 1){
+
+pages[currentPage].classList.remove("active");
+
+currentPage++;
+
+pages[currentPage].classList.add("active");
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
