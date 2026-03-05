@@ -14,6 +14,21 @@
 
 <body>
 
+
+<!-- NAVIGATION DOTS -->
+
+<div class="nav-dots">
+
+<div class="dot active" onclick="goToPage(0)"></div>
+<div class="dot" onclick="goToPage(1)"></div>
+<div class="dot" onclick="goToPage(2)"></div>
+<div class="dot" onclick="goToPage(3)"></div>
+<div class="dot" onclick="goToPage(4)"></div>
+
+</div>
+
+
+
 <!-- HERO -->
 
 <section class="page hero active">
@@ -35,6 +50,7 @@ Building scalable data pipelines and analytics-ready systems.
 </section>
 
 
+
 <!-- ABOUT -->
 
 <section class="page about">
@@ -49,9 +65,9 @@ Building scalable data pipelines and analytics-ready systems.
 
 <p>
 
-I am a data engineer focused on designing scalable data pipelines,
-cleaning and transforming complex datasets, and building systems
-that power analytics and machine learning.
+I design scalable data pipelines, build ETL systems,
+and transform complex datasets into reliable
+analytics-ready data architectures.
 
 </p>
 
@@ -59,10 +75,72 @@ that power analytics and machine learning.
 
 </div>
 
+<div class="arrow up" onclick="prevPage()">↑</div>
 <div class="arrow" onclick="nextPage()">↓</div>
 
 </section>
 
+
+
+<section class="page education">
+
+<h2>Education</h2>
+
+<div class="education-container">
+
+<div class="edu-card">
+
+<div class="edu-header">
+
+<img 
+src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Benha_University_Logo.png/330px-Benha_University_Logo.png"
+class="edu-logo"
+>
+
+<div>
+
+<h3>Bachelor of Bioinformatics</h3>
+
+<p class="edu-school">Benha University</p>
+
+<p class="edu-year">Expected Graduation: 2027</p>
+
+</div>
+
+</div>
+
+<p class="edu-desc">
+
+Studying Bioinformatics while developing strong analytical
+and research skills. My academic background supports my
+interest in data-driven problem solving and scientific data analysis.
+
+</p>
+
+</div>
+
+
+
+<div class="edu-card">
+
+<div class="edu-header">
+
+
+>
+
+<div>
+
+
+</p>
+
+</div>
+
+</div>
+
+<div class="arrow up" onclick="prevPage()">↑</div>
+<div class="arrow" onclick="nextPage()">↓</div>
+
+</section>
 
 <!-- SKILLS -->
 
@@ -73,22 +151,117 @@ that power analytics and machine learning.
 <div class="skills">
 
 <div class="skill">🐍 Python</div>
-
 <div class="skill">🗄 SQL</div>
-
 <div class="skill">📊 Pandas</div>
-
 <div class="skill">⚙ ETL Pipelines</div>
-
 <div class="skill">☁ Data Warehousing</div>
-
 <div class="skill">📈 Data Visualization</div>
 
 </div>
 
+<div class="arrow up" onclick="prevPage()">↑</div>
 <div class="arrow" onclick="nextPage()">↓</div>
 
 </section>
+
+<section class="page services">
+
+<h2>Services</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<h3>Data Pipeline Development</h3>
+
+<p>
+
+Design and build ETL pipelines that extract,
+clean and transform raw data into structured
+datasets ready for analytics.
+
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<h3>Data Cleaning & Transformation</h3>
+
+<p>
+
+Prepare messy datasets by handling missing values,
+standardizing formats and transforming raw data
+into usable analytical datasets.
+
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<h3>SQL Data Analysis</h3>
+
+<p>
+
+Write optimized SQL queries to extract insights,
+generate reports and support data-driven decisions.
+
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<h3>Data Visualization</h3>
+
+<p>
+
+Create dashboards and visual reports using Python
+and data visualization tools to make insights clear.
+
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<h3>Data Processing with Python</h3>
+
+<p>
+
+Use Python and Pandas to process large datasets,
+automate workflows and build scalable data scripts.
+
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<h3>Dataset Exploration</h3>
+
+<p>
+
+Perform exploratory data analysis to discover patterns,
+trends and opportunities inside complex datasets.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="arrow up" onclick="prevPage()">↑</div>
+<div class="arrow" onclick="nextPage()">↓</div>
+
+</section>
+
 
 
 <!-- PROJECTS -->
@@ -106,7 +279,7 @@ that power analytics and machine learning.
 <h3>Titanic Data Analysis</h3>
 
 <p>
-Exploratory data analysis using Python and Pandas.
+Exploratory analysis using Python and Pandas.
 </p>
 
 <a href="https://github.com/Ahmed-Elbadryy">View Project</a>
@@ -145,9 +318,11 @@ Advanced SQL queries for analytical insights.
 
 </div>
 
+<div class="arrow up" onclick="prevPage()">↑</div>
 <div class="arrow" onclick="nextPage()">↓</div>
 
 </section>
+
 
 
 <!-- CONTACT -->
@@ -165,28 +340,147 @@ github.com/Ahmed-Elbadryy
 </a>
 </p>
 
+<div class="arrow up" onclick="prevPage()">↑</div>
+
 </section>
+
 
 
 <script>
 
 let currentPage = 0;
+let isAnimating = false;
 
 const pages = document.querySelectorAll(".page");
+const dots = document.querySelectorAll(".dot");
+
+/* UPDATE DOTS */
+
+function updateDots(){
+
+dots.forEach((dot,i)=>{
+
+dot.classList.remove("active");
+
+if(i === currentPage){
+dot.classList.add("active");
+}
+
+});
+
+}
+
+/* SHOW PAGE */
+
+function showPage(index){
+
+pages.forEach((page,i)=>{
+
+if(i === index){
+page.classList.add("active");
+}else{
+page.classList.remove("active");
+}
+
+});
+
+updateDots();
+
+}
+
+/* NAVIGATION */
 
 function nextPage(){
 
-if(currentPage < pages.length - 1){
+if(isAnimating) return;
 
-pages[currentPage].classList.remove("active");
+if(currentPage < pages.length - 1){
 
 currentPage++;
 
-pages[currentPage].classList.add("active");
+showPage(currentPage);
+
+lockAnimation();
 
 }
 
 }
+
+function prevPage(){
+
+if(isAnimating) return;
+
+if(currentPage > 0){
+
+currentPage--;
+
+showPage(currentPage);
+
+lockAnimation();
+
+}
+
+}
+
+function goToPage(index){
+
+if(isAnimating) return;
+
+currentPage = index;
+
+showPage(currentPage);
+
+lockAnimation();
+
+}
+
+/* LOCK WHILE ANIMATION PLAYS */
+
+function lockAnimation(){
+
+isAnimating = true;
+
+setTimeout(()=>{
+
+isAnimating = false;
+
+},900);
+
+}
+
+/* MOUSE WHEEL CONTROL */
+
+let wheelTimeout;
+
+window.addEventListener("wheel",(e)=>{
+
+if(wheelTimeout) return;
+
+wheelTimeout = setTimeout(()=>{
+wheelTimeout = null;
+},800);
+
+if(e.deltaY > 0){
+nextPage();
+}else{
+prevPage();
+}
+
+});
+
+/* KEYBOARD NAVIGATION */
+
+document.addEventListener("keydown",(e)=>{
+
+if(e.key === "ArrowDown"){
+nextPage();
+}
+
+if(e.key === "ArrowUp"){
+prevPage();
+}
+
+});
 
 </script>
 

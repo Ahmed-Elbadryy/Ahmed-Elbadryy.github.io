@@ -23,12 +23,13 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:60px;
-transition:transform 0.9s ease;
+transition:transform 0.8s ease;
 }
 
 .page:not(.active){
 transform:translateY(100%);
 }
+
 
 /* HERO */
 
@@ -43,6 +44,7 @@ background:rgba(2,6,23,0.7);
 padding:40px;
 border-radius:10px;
 }
+
 
 /* ABOUT SPLIT */
 
@@ -66,6 +68,7 @@ border-radius:10px;
 max-width:500px;
 text-align:left;
 }
+
 
 /* SKILLS */
 
@@ -94,6 +97,7 @@ transform:translateY(-6px);
 background:#1e293b;
 }
 
+
 /* PROJECTS */
 
 .projects-section{
@@ -121,10 +125,6 @@ height:180px;
 object-fit:cover;
 }
 
-.project h3{
-margin-top:10px;
-}
-
 .project p{
 padding:10px;
 }
@@ -139,6 +139,7 @@ font-weight:bold;
 transform:translateY(-8px);
 }
 
+
 /* CONTACT */
 
 .contact{
@@ -149,7 +150,8 @@ background:#0f172a;
 color:#38bdf8;
 }
 
-/* ARROW */
+
+/* ARROWS */
 
 .arrow{
 position:absolute;
@@ -159,6 +161,14 @@ color:#38bdf8;
 cursor:pointer;
 animation:bounce 2s infinite;
 }
+
+.arrow.up{
+top:40px;
+bottom:auto;
+}
+
+
+/* BOUNCE */
 
 @keyframes bounce{
 
@@ -171,6 +181,32 @@ transform:translateY(12px);
 }
 
 }
+
+
+/* NAV DOTS */
+
+.nav-dots{
+position:fixed;
+right:30px;
+top:50%;
+transform:translateY(-50%);
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+.dot{
+width:12px;
+height:12px;
+border-radius:50%;
+background:#1e293b;
+cursor:pointer;
+}
+
+.dot.active{
+background:#38bdf8;
+}
+
 
 /* RESPONSIVE */
 
@@ -193,4 +229,78 @@ width:90%;
 width:95%;
 }
 
+/* EDUCATION SECTION */
+
+.education{
+background:#0f172a;
+}
+
+.education-container{
+display:flex;
+gap:40px;
+margin-top:40px;
+max-width:900px;
+}
+
+.edu-card{
+
+background:#020617;
+padding:30px;
+border-radius:12px;
+flex:1;
+border-left:4px solid #38bdf8;
+transition:0.3s;
+
+}
+
+.edu-card:hover{
+
+transform:translateY(-8px);
+background:#1e293b;
+
+}
+
+.edu-header{
+
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:15px;
+
+}
+
+.edu-logo{
+
+width:50px;
+height:50px;
+object-fit:contain;
+
+}
+
+.edu-school{
+color:#38bdf8;
+font-weight:bold;
+}
+
+.edu-year{
+font-size:14px;
+opacity:0.8;
+margin-top:3px;
+}
+
+.edu-desc{
+margin-top:10px;
+line-height:1.6;
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.education-container{
+flex-direction:column;
+}
+
+}
 }
